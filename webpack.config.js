@@ -11,7 +11,14 @@ module.exports = {
     devServer: {
         contentBase: './public', //本地服务器加载的页面所在目录
         historyApiFallback: true, //不跳转
-        inline: true //实时刷新
+        inline: true, //实时刷新
+        client: {
+            logging: 'error',//打印报错
+            overlay: { //报错时，直接覆盖浏览器视窗，显示错误
+                errors: true,
+                warnings: true
+            }
+        }
     },
     module: {
         rules:[
@@ -46,5 +53,6 @@ module.exports = {
             }
         })
     ],
-    mode:'production'
+    //mode:'production'
+    mode:'development'
 }

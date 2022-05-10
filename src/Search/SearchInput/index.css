@@ -1,0 +1,60 @@
+/*注意: input是不闭合的标签，::after和::before等伪元素只能插入闭合标签中，所以需要wrapper*/
+.search-wrapper{
+    position: relative;
+    height: 3rem;
+}
+
+.search-wrapper>input{
+    outline:2px solid #16a085;
+    width: 90%;
+    height: 3rem;
+    border-radius: 1.5rem;
+    border: 0;
+    text-indent: 3.5rem;
+}
+
+.search-wrapper>span{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    text-indent: 5.5rem;
+    /* transition: .5s; */
+    transform: translateY(-50%);
+    color: gray;
+}
+
+.search-wrapper>button{
+    position: absolute;
+    top: 0;
+    right: 5%;
+    height: 100%;
+    line-height: 3rem;
+    background: #16a085;
+    border: 0px;
+    border-radius: 1.5rem;
+    width: 5rem;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.search-wrapper::before{
+    content: '';
+}
+
+.favorite-list{
+    display: flex;
+    padding: 1rem;
+}
+
+.favorite-list>li{
+    max-width: 25%;
+    margin-left: 1rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #888;
+}
+
+.favorite-list>li:nth-child(n+4){
+    display: none;
+}

@@ -1,0 +1,9 @@
+.search{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    background: white;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+}
