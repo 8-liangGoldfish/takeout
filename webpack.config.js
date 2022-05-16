@@ -20,6 +20,9 @@ module.exports = {
             }
         }
     },
+    resolve:{ //配置自动添加文件后缀
+        extensions: ['.js','.jsx','.json']
+    },
     module: {
         rules:[
             {
@@ -39,6 +42,17 @@ module.exports = {
                 //css转换
                 test:/\.css$/,
                 use:['style-loader','css-loader']
+            },
+            {
+                //img src 图片引入处理
+                test: /\.(webp|png|jpg|gif)$/i,
+                use: [{
+                    loader: 'url-loader',
+                    options:{
+                        limit: 5*1024, //5kb以下的图片使用base64编码，减少请求数
+                        name: 'imgs/[name].[hash:8].[ext]' //打包到img文件夹下，名称是原图片名.8位hash值.扩展名
+                    }
+                }]
             }
         ]
     },
@@ -54,5 +68,5 @@ module.exports = {
         })
     ],
     //mode:'production'
-    mode:'development'
+    mode:'production'
 }

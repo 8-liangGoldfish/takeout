@@ -1,2 +1,4 @@
 #忽略node_modules下的文件
 node_modules/
+#忽略build下的文件
+build/

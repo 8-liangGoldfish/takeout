@@ -192,6 +192,10 @@ module.exports = {
             }
         })
     ],
+    resolve: {
+        //配置自动添加文件后缀
+        extensions: ['.js','.jsx','.json']
+    }
     mode:'production' //生产环境（默认）
 }
 ```
